@@ -10,7 +10,7 @@
   }
   
   body {
-    background-color: #f5f5f5;
+    background-color: rgb(84, 134, 192);
   }
   
   html {
@@ -44,6 +44,7 @@
     width: 100%;
     max-width: 480px;
     border-bottom: 1px solid #ebebeb;
+    border-radius: 8px;
   }
   
   /* HEADER */
@@ -90,6 +91,10 @@
     color: #666;
     padding: 18px;
     font-size: 18px;
+  }
+
+  .control .btn :hover{
+    cursor: pointer;
   }
   
   .control .btn.active {
@@ -142,6 +147,11 @@
     padding: 8px 16px;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .song:hover {
+    cursor: pointer;
+    background: #d0d1d4;
   }
   
   .song.active {
