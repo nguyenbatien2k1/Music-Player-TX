@@ -93,7 +93,7 @@
     font-size: 18px;
   }
 
-  .control .btn :hover{
+  .control .btn:hover{
     cursor: pointer;
   }
   
@@ -135,7 +135,7 @@
   
   /* PLAYLIST */
   .playlist {
-    margin-top: 408px;
+    margin-top: 470px;
     padding: 12px;
   }
   
@@ -196,4 +196,66 @@
     color: #999;
     font-size: 18px;
   }
-  
+
+
+  /* Make volume */
+  .volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.volume-icon {
+    color: #c774bf;
+    font-size: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+
+.volume-bar {
+    width: 45%;
+    background-color: #d3d3d3;
+    height: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.volume-bar__process {
+    background: linear-gradient(90deg, #c7a6da 0%, #ffa3c5 75%);
+    height: 100%;
+    position: relative;
+}
+
+.icon-process::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #f0528c;
+    border-radius: 50%;
+    right: -5px;
+    top: 0;
+    transform: translateY(-30%);
+    border: 2px solid #fff;
+    outline: 0.5px solid rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.volume-bar:hover .icon-process::after {
+    opacity: 1;
+}
+
+.none {
+  display: none;
+}
+
+
+/* Make Time music */
+.time {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
