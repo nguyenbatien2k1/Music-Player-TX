@@ -50,7 +50,6 @@ const app = {
   isPlaying: false,
   isRandom: false,
   isRepeat: false,
-  isHoldVolume: false,
   config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
   setConfig: function (key, value) {
     this.config[key] = value;
@@ -337,17 +336,6 @@ const app = {
       }
     };
 
-    // Điều chỉnh âm lượng bằng mouse
-    volumeBar.onmousemove = function (e) {
-        if (_this.isHoldVolume) {
-            if (e.offsetX <= this.offsetWidth && e.offsetX >= 0) {
-                const seekVolume = (e.offsetX / this.offsetWidth);
-                audio.volume = seekVolume;
-                volumeSub.style.width = seekVolume * this.offsetWidth + "px";
-            }
-        }
-    }
-
     // Thay đổi icon volume
     audio.onvolumechange = function (e) {
       if (this.muted) {
@@ -407,7 +395,7 @@ const app = {
 
   // Khởi tạo âm lượng mặc định
   initialVolume: function () {
-    const defaultVolume = 0.3;
+    const defaultVolume = 0.35;
     audio.volume = defaultVolume;
     const volumeWidth = volumeBar.offsetWidth;
     volumeSub.style.width = volumeWidth * defaultVolume + "px";
